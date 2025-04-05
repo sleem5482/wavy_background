@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+.page{
+    height: 100vh;
+    &::before{
+        content: '';
+        position: fixed;
+        width: 300%;
+        height: 100%;
+        background-color: blue;
+        left: 50%;
+        top: 35%;
+        transform: translateX(-50%) skew(0,-10deg);
+        border-radius: 50%;
+        z-index: -1;
+        animation: waving 10s ease-in-out infinite alternate;
+    }
+}
+.card{
+    width: 300px;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(240, 227, 227) inset;
+}
+.card .box{
+    width: 250px;
+    height: 300px;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+
+}
+.card h2{
+    line-height: 0;
+}
+.card p{
+    line-height: 0;
+}
+.card .box span{
+        align-content: center;
+        font-size: 30px;
+        color: white;
+}
+@keyframes waving{
+    from{
+        transform: translateX(-50%) skew(0,-10deg);
+    }
+    to{
+        transform: translateX(-30%) skew(10deg,0);
+    }
+}
